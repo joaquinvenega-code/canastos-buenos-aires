@@ -1,6 +1,5 @@
-// Reemplazar únicamente por el WhatsApp confirmado del negocio, en formato internacional.
-// Mantener el placeholder hasta tener un número real; no activar con números de ejemplo.
-const WHATSAPP_NUMBER = '54911XXXXXXXX';
+// WhatsApp del negocio confirmado por el usuario.
+const WHATSAPP_NUMBER = '5491132849486';
 const isWhatsAppConfigured = /^[1-9]\d{7,14}$/.test(WHATSAPP_NUMBER);
 document.documentElement.classList.add('js');
 const toggle = document.querySelector('.menu-toggle');
@@ -42,15 +41,6 @@ function updateMessage() {
 }
 model.addEventListener('change', updateMessage);
 locality.addEventListener('input', updateMessage);
-document.querySelectorAll('[data-model]').forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    model.value = link.dataset.model;
-    updateMessage();
-    document.querySelector('#contacto').scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
-    locality.focus({preventScroll: true});
-  });
-});
 if (isWhatsAppConfigured) {
   sendButton.disabled = false;
   sendButton.textContent = 'Continuar en WhatsApp ↗';

@@ -14,7 +14,7 @@ function setup(number='54911XXXXXXXX',clipboardFails=false){
   get('#modelo').value='asesoramiento';
   const cards=['60-sin','60-con','100-sin','100-con'].map(id=>Object.assign(new Element(),{dataset:{model:id}}));
   const docEvents={},opened=[],copied=[];
-  vm.runInNewContext(source.replace("'54911XXXXXXXX'",JSON.stringify(number)),{
+  vm.runInNewContext(source.replace(/const WHATSAPP_NUMBER = '[^']+';/, `const WHATSAPP_NUMBER = ${JSON.stringify(number)};`),{
     document:{documentElement:get('html'),querySelector:get,querySelectorAll:()=>cards,addEventListener:(k,fn)=>docEvents[k]=fn},
     window:{matchMedia:()=>({matches:false,addEventListener(){}}),open:(...args)=>opened.push(args)},
     navigator:{clipboard:{writeText:async value=>{if(clipboardFails)throw Error('denied');copied.push(value);}}}
@@ -27,16 +27,23 @@ test('placeholder and malformed numbers cannot open WhatsApp',()=>{
     s.get('#quote-form').handlers.submit({preventDefault(){}});assert.equal(s.opened.length,0);
   }
 });
-test('all four cards retain model and Unicode locality in the message',()=>{
-  const s=setup();s.get('#localidad').value='  González Catán  ';
-  for(const card of s.cards){card.handlers.click({preventDefault(){}});const [size,lid]=card.dataset.model.split('-');assert.equal(s.get('#modelo').value,card.dataset.model);assert.match(s.get('#mensaje').value,new RegExp(`${size} cm ${lid==='con'?'con':'sin'} tapa`));assert.match(s.get('#mensaje').value,/Mi localidad es González Catán\./);}
+test('all product links target the confirmed WhatsApp with the matching model',()=>{
+  const html=fs.readFileSync(require('node:path').join(__dirname,'../index.html'),'utf8');
+  const cards=[...html.matchAll(/<article class="product-card">([\s\S]*?)<\/article>/g)];
+  assert.equal(cards.length,4);
+  for(const [,card] of cards){
+    const file=card.match(/assets\/modelo-(60|100)-(sin|con)\.jpg/);
+    const url=new URL(card.match(/class="button product-cta" href="([^"]+)"/)[1]);
+    assert.equal(url.hostname,'wa.me');assert.equal(url.pathname,'/5491132849486');
+    assert.ok(url.searchParams.get('text').includes(file[1]+' cm '+file[2]+' tapa'));
+  }
 });
 test('configured contact opens correctly encoded text without sending it',()=>{
   // Synthetic fixture: window.open is mocked and no network request occurs.
   const s=setup('5491100000000');assert.equal(s.get('#send-button').disabled,false);
   s.get('#localidad').value='Adrogué & <prueba>';
   s.get('#quote-form').handlers.submit({preventDefault(){}});
-  const [url,target,features]=s.opened[0];assert.equal(new URL(url).searchParams.get('text'),s.get('#mensaje').value);assert.equal(target,'_blank');assert.equal(features,'noopener,noreferrer');assert.equal(s.get('#contact-notice').hidden,true);
+  const [url,target,features]=s.opened[0];assert.equal(new URL(url).pathname,'/5491100000000');assert.equal(new URL(url).searchParams.get('text'),s.get('#mensaje').value);assert.equal(target,'_blank');assert.equal(features,'noopener,noreferrer');assert.equal(s.get('#contact-notice').hidden,true);
 });
 test('copy succeeds with explicit unsent status',async()=>{
   const s=setup();await s.get('#copy-button').handlers.click();assert.equal(s.copied[0],s.get('#mensaje').value);assert.match(s.get('#form-status').textContent,/no se envió/);

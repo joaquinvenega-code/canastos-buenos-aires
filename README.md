@@ -1,4 +1,4 @@
-# Canastos de Basura Buenos Aires — V3
+# Canastos de Basura Buenos Aires — V4
 
 Landing estática, sin dependencias ni build. Publicada desde `main` en GitHub Pages:
 https://joaquinvenega-code.github.io/canastos-buenos-aires/
@@ -9,7 +9,7 @@ https://joaquinvenega-code.github.io/canastos-buenos-aires/
 - `script.js`: menú, selección de modelo, armado/copiado de consulta y WhatsApp.
 - `assets/modelo-*.jpg`: las cuatro fichas comerciales enviadas por el usuario. Se muestran encuadres del producto mediante SVG en HTML, conservando los JPEG completos sin alteraciones. Cada tarjeta enlaza a su ficha original.
 - `assets/canasto-*.svg`: ilustraciones de V2 conservadas, ya no visibles.
-- `assets/logo.svg`: marca provisional heredada.
+- `assets/logo-negocio.jpg`: logo original confirmado por el usuario, conservado sin alteraciones. Se usa en cabecera, pie y favicon.
 - `tests/contact.test.cjs`: pruebas de interacción sin dependencias ni envíos reales.
 - `REVIEW-V2.md`: auditoría, decisiones y validación.
 
@@ -27,10 +27,10 @@ trabas en patas, Mercado Pago, entrega en Buenos Aires, opción de Correo Argent
 y localidades de trabajos informadas: Campana, Adrogué y González Catán.
 Los precios se identifican como referencia; no se anuncian como vigentes.
 
-## Activar contacto cuando esté confirmado
-1. Reemplazar `WHATSAPP_NUMBER` en `script.js` por el número real en formato internacional, sólo dígitos.
-2. El botón se habilitará y abrirá `wa.me` con el modelo y localidad del formulario. El visitante revisa y envía desde WhatsApp.
-3. Mientras siga `54911XXXXXXXX`, no se crea ningún enlace a un número ficticio. Se informa que el contacto está pendiente y se permite copiar el mensaje.
+## Contacto confirmado
+WhatsApp: **+54 9 11 3284-9486**, enlace internacional `https://wa.me/5491132849486`.
+Los botones de cabecera, portada, catálogo y barra móvil abren WhatsApp directamente. Cada tarjeta incluye su modelo en el mensaje. El formulario permite agregar localidad y revisar/copiar la consulta. El visitante envía desde WhatsApp.
+Si el teléfono cambia, actualizar `WHATSAPP_NUMBER` en `script.js` y los enlaces `wa.me` en `index.html`.
 
 El formulario no tiene backend, no guarda datos y no envía mensajes por sí solo. No se incluye analítica propia. La sección Instagram carga contenido externo de Instagram.
 
@@ -42,7 +42,10 @@ El formulario no tiene backend, no guarda datos y no envía mensajes por sí sol
 - El versionado de `styles.css` y `script.js` evita reutilizar recursos de la versión anterior.
 
 ## Material pendiente
-Se incorporaron las cuatro imágenes enviadas por el usuario. Siguen pendientes el WhatsApp real y el logo original. Confirmar vigencia de precios, cobertura y condiciones comerciales con el negocio antes de la campaña.
+Se incorporaron las cuatro imágenes comerciales, el logo y el WhatsApp enviados por el usuario. Confirmar vigencia de precios, cobertura y condiciones comerciales con el negocio antes de la campaña. Los comentarios continúan identificados como ejemplos.
+
+## Diseño V4
+Se adapta la estética de las capturas aprobadas: azul oscuro, acentos celestes, botones verdes, logo circular, portada con producto, catálogo de cuatro columnas en escritorio y beneficios con iconos. En celulares las tarjetas se apilan para conservar legibilidad. Las fotos del negocio se conservan; las imágenes de referencia se usan como guía visual y no como evidencia de instalaciones ni cantidades de clientes.
 
 ## Verificación
 `node --test tests/contact.test.cjs`
