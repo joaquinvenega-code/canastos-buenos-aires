@@ -21,3 +21,11 @@
 .product-photo{object-fit:cover;object-position:center 35%}
 
 .hero-photo{object-fit:cover;object-position:center}
+
+/* A single recognizable WhatsApp mark, with a clear handset at small sizes. */
+.icon-definitions{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.whatsapp-icon{display:block;width:26px;height:26px;min-width:26px;flex-shrink:0;fill:currentColor;stroke:none}
+.product-cta .whatsapp-icon{width:24px;height:24px;min-width:24px}
+.hero-actions .whatsapp-icon{width:32px;height:32px;min-width:32px}
+.mobile-dock .whatsapp-icon{width:26px;height:26px;min-width:26px}
+.contact-phone .whatsapp-icon{width:33px;height:33px;min-width:33px}

@@ -55,3 +55,4 @@ Abrir con un servidor HTTP estático para revisar. La página, fichas, preguntas
 
 ## WordPress
 Los bloques son independientes: cabecera, hero, catálogo, instalación, preguntas y contacto. Se pueden trasladar a una plantilla o bloques de WordPress conservando contenido y estilos. Esta entrega mantiene GitHub Pages, sin cambiar hosting ni dominio.
+`n## Ícono de WhatsApp`nSímbolo SVG compartido entre los ocho accesos, basado en [Simple Icons](https://github.com/simple-icons/simple-icons/blob/develop/icons/whatsapp.svg). Mantiene proporciones y tamaños mínimos de 24 px en el catálogo, 26 px en navegación y 32 px en portada.
