@@ -7,7 +7,8 @@ https://joaquinvenega-code.github.io/canastos-buenos-aires/
 - `index.html`: contenido comercial, fichas y formulario de consulta.
 - `styles.css`: diseño responsive, navegación y estados de foco.
 - `script.js`: menú, selección de modelo, armado/copiado de consulta y WhatsApp.
-- `assets/modelo-*.jpg`: las cuatro fichas comerciales enviadas por el usuario. Se muestran encuadres del producto mediante SVG en HTML, conservando los JPEG completos sin alteraciones. Cada tarjeta enlaza a su ficha original.
+- `assets/producto-*-20260920.png`: las cuatro nuevas imágenes de producto enviadas el 20 de septiembre, en el orden 60 sin tapa, 100 sin tapa, 100 con tapa y 60 con tapa. Los PNG se conservan sin alteraciones y se encuadran con CSS.
+- `assets/modelo-*.jpg`: las fichas comerciales originales. Cada tarjeta conserva su enlace a la ficha y la portada mantiene su imagen anterior.
 - `assets/canasto-*.svg`: ilustraciones de V2 conservadas, ya no visibles.
 - `assets/logo-negocio.jpg`: logo original confirmado por el usuario, conservado sin alteraciones. Se usa en cabecera, pie y favicon.
 - `tests/contact.test.cjs`: pruebas de interacción sin dependencias ni envíos reales.

@@ -16,3 +16,6 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 .hero-photo{width:75%;margin-left:auto}@media(max-width:600px){.hero-photo{width:100%}}
 @media(min-width:601px){.hero-media::after{background:linear-gradient(90deg,#001020 25%,transparent 58%),linear-gradient(0deg,#001020,transparent 25%)}}
+
+/* Product images supplied on 20 September: frame the basket and its supports. */
+.product-photo{object-fit:cover;object-position:center 35%}
