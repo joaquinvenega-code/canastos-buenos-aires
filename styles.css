@@ -19,3 +19,5 @@
 
 /* Product images supplied on 20 September: frame the basket and its supports. */
 .product-photo{object-fit:cover;object-position:center 35%}
+
+.hero-photo{object-fit:cover;object-position:center}
