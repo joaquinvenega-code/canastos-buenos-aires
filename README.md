@@ -49,10 +49,13 @@ Se incorporaron las cuatro imágenes comerciales, el logo y el WhatsApp enviados
 Se adapta la estética de las capturas aprobadas: azul oscuro, acentos celestes, botones verdes, logo circular, portada con producto, catálogo de cuatro columnas en escritorio y beneficios con iconos. En celulares las tarjetas se apilan para conservar legibilidad. Las fotos del negocio se conservan; las imágenes de referencia se usan como guía visual y no como evidencia de instalaciones ni cantidades de clientes.
 
 ## Verificación
-`node --test tests/contact.test.cjs`
+
+ode --test tests/contact.test.cjs`
 
 Abrir con un servidor HTTP estático para revisar. La página, fichas, preguntas y navegación siguen accesibles sin JavaScript; la preparación automática del mensaje requiere JavaScript.
 
 ## WordPress
 Los bloques son independientes: cabecera, hero, catálogo, instalación, preguntas y contacto. Se pueden trasladar a una plantilla o bloques de WordPress conservando contenido y estilos. Esta entrega mantiene GitHub Pages, sin cambiar hosting ni dominio.
-`n## Ícono de WhatsApp`nSímbolo SVG compartido entre los ocho accesos, basado en [Simple Icons](https://github.com/simple-icons/simple-icons/blob/develop/icons/whatsapp.svg). Mantiene proporciones y tamaños mínimos de 24 px en el catálogo, 26 px en navegación y 32 px en portada.
+
+## Ícono de WhatsApp
+Símbolo SVG compartido entre los ocho accesos, basado en [Simple Icons](https://github.com/simple-icons/simple-icons/blob/develop/icons/whatsapp.svg). Mantiene proporciones y tamaños mínimos de 24 px en el catálogo, 26 px en navegación y 32 px en portada.
