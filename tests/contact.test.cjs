@@ -48,6 +48,21 @@ test('configured contact opens correctly encoded text without sending it',()=>{
 test('copy succeeds with explicit unsent status',async()=>{
   const s=setup();await s.get('#copy-button').handlers.click();assert.equal(s.copied[0],s.get('#mensaje').value);assert.match(s.get('#form-status').textContent,/no se envió/);
 });
+
+test('custom orders request a design quote while standard orders coordinate the purchase',()=>{
+  const s=setup();
+  s.get('#localidad').value='González Catán';
+  for(const choice of ['a-medida','barrio-cerrado']){
+    s.get('#modelo').value=choice;s.get('#modelo').handlers.change();
+    assert.match(s.get('#mensaje').value,/presupuesto según las medidas y el diseño/);
+    assert.match(s.get('#mensaje').value,/González Catán/);
+    assert.match(s.get('#mensaje').value,choice==='a-medida'?/canasto más grande, a medida/:/barrio cerrado/);
+  }
+  s.get('#modelo').value='100-con';s.get('#modelo').handlers.change();
+  assert.match(s.get('#mensaje').value,/100 cm con tapa/);
+  assert.match(s.get('#mensaje').value,/coordinar la compra/);
+  assert.doesNotMatch(s.get('#mensaje').value,/precio vigente|presupuesto/);
+});
 test('clipboard denial selects text for manual copying',async()=>{
   const s=setup(undefined,true);await s.get('#copy-button').handlers.click();assert.equal(s.get('#mensaje').selected,true);assert.match(s.get('#form-status').textContent,/opción Copiar/);
 });

@@ -15,7 +15,7 @@ https://joaquinvenega-code.github.io/canastos-buenos-aires/
 - `REVIEW-V2.md`: auditoría, decisiones y validación.
 
 ## Datos conservados del proyecto
-| Modelo | Precio de referencia |
+| Modelo | Precio final en Buenos Aires |
 | --- | --- |
 | 60 cm sin tapa | $160.000 |
 | 60 cm con tapa | $180.000 |
@@ -23,10 +23,9 @@ https://joaquinvenega-code.github.io/canastos-buenos-aires/
 | 100 cm con tapa | $250.000 |
 
 Todos: 0,50 m de ancho, 0,50 m de profundidad y 1,50 m de altura total.
-Se conserva información de instalación a confirmar por localidad, estructura reforzada,
-trabas en patas, Mercado Pago, entrega en Buenos Aires, opción de Correo Argentino
-y localidades de trabajos informadas: Campana, Adrogué y González Catán.
-Los precios se identifican como referencia; no se anuncian como vigentes.
+Condiciones confirmadas por el cliente el 22 de septiembre: los cuatro precios son finales e incluyen envío e instalación sin cargo en todo Buenos Aires. Venta directa de fábrica, sin intermediarios. Estructura reforzada, trabas en patas y todos los medios de pago, incluido Mercado Pago. Fuera de Buenos Aires se cotiza el envío por Correo Argentino.
+
+También se fabrican canastos más grandes a partir de los tamaños estándar y diseños específicos para barrios cerrados, con presupuesto según medidas y diseño.
 
 ## Contacto confirmado
 WhatsApp: **+54 9 11 3284-9486**, enlace internacional `https://wa.me/5491132849486`.
@@ -36,21 +35,21 @@ Si el teléfono cambia, actualizar `WHATSAPP_NUMBER` en `script.js` y los enlace
 El formulario no tiene backend, no guarda datos y no envía mensajes por sí solo. No se incluye analítica propia. La sección Instagram carga contenido externo de Instagram.
 
 ## Comentarios e Instagram
-- Los tres comentarios son **ejemplos de redacción solicitados por el usuario**, no reseñas reales. La advertencia está visible en el encabezado y en cada tarjeta. No se inventan identidades, estrellas ni cifras de satisfacción. Reemplazarlos por testimonios reales antes de usar esta sección como prueba social en una campaña.
+- Se conservan los tres comentarios de prueba por indicación del usuario del 22 de septiembre. Están identificados como ejemplos, no testimonios reales. No hay recepción, almacenamiento ni publicación de comentarios de visitantes; no se conectó ni contrató un servicio externo.
 - Perfil confirmado por el usuario: https://www.instagram.com/canastosdebasurabuenosaires/
 - Integración nativa del perfil mediante el script oficial `https://www.instagram.com/embed.js`. Instagram sirve su contenido; no se copian miniaturas a la web ni se coloca un token en el repositorio.
 - El enlace al perfil permanece disponible si Instagram no carga. La disponibilidad depende de Instagram y de los permisos de contenido externo del navegador.
 - El versionado de `styles.css` y `script.js` evita reutilizar recursos de la versión anterior.
 
 ## Material pendiente
-Se incorporaron las cuatro imágenes comerciales, el logo y el WhatsApp enviados por el usuario. Confirmar vigencia de precios, cobertura y condiciones comerciales con el negocio antes de la campaña. Los comentarios continúan identificados como ejemplos.
+Pendientes: enlace del Facebook confirmado, fotos reales para sustituir las imágenes generadas (portada: 100 cm con tapa). Los precios, cobertura, venta directa y pedidos a medida ya fueron confirmados por el cliente.
 
 ## Diseño V4
 Se adapta la estética de las capturas aprobadas: azul oscuro, acentos celestes, botones verdes, logo circular, portada con producto, catálogo de cuatro columnas en escritorio y beneficios con iconos. En celulares las tarjetas se apilan para conservar legibilidad. Las fotos del negocio se conservan; las imágenes de referencia se usan como guía visual y no como evidencia de instalaciones ni cantidades de clientes.
 
 ## Verificación
 
-ode --test tests/contact.test.cjs`
+`node --test tests/*.test.cjs`
 
 Abrir con un servidor HTTP estático para revisar. La página, fichas, preguntas y navegación siguen accesibles sin JavaScript; la preparación automática del mensaje requiere JavaScript.
 

@@ -32,11 +32,12 @@ const message = document.querySelector('#mensaje');
 const sendButton = document.querySelector('#send-button');
 const copyButton = document.querySelector('#copy-button');
 const status = document.querySelector('#form-status');
-const modelNames = {'60-sin': 'el canasto de 60 cm sin tapa', '60-con': 'el canasto de 60 cm con tapa', '100-sin': 'el canasto de 100 cm sin tapa', '100-con': 'el canasto de 100 cm con tapa'};
+const modelNames = {'60-sin': 'el canasto de 60 cm sin tapa', '60-con': 'el canasto de 60 cm con tapa', '100-sin': 'el canasto de 100 cm sin tapa', '100-con': 'el canasto de 100 cm con tapa', 'a-medida': 'un canasto más grande, a medida', 'barrio-cerrado': 'un modelo específico para un barrio cerrado'};
 function updateMessage() {
   const intro = modelNames[model.value] ? `Hola, me interesa ${modelNames[model.value]}.` : 'Hola, necesito asesoramiento para elegir un canasto de basura.';
   const place = locality.value.trim() ? ` Mi localidad es ${locality.value.trim()}.` : '';
-  message.value = `${intro}${place} Quisiera consultar precio vigente, entrega e instalación.`;
+  const nextStep = ['a-medida', 'barrio-cerrado'].includes(model.value) ? 'Quisiera asesoramiento y un presupuesto según las medidas y el diseño que necesito.' : 'Quisiera coordinar la compra, la entrega y la instalación.';
+  message.value = `${intro}${place} ${nextStep}`;
   status.textContent = '';
 }
 model.addEventListener('change', updateMessage);
