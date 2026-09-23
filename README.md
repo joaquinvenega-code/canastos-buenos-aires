@@ -7,8 +7,8 @@ https://joaquinvenega-code.github.io/canastos-buenos-aires/
 - `index.html`: contenido comercial, fichas y formulario de consulta.
 - `styles.css`: diseño responsive, navegación y estados de foco.
 - `script.js`: menú, selección de modelo, armado/copiado de consulta y WhatsApp.
-- `assets/producto-*-20260920.png`: las cuatro nuevas imágenes de producto enviadas el 20 de septiembre, en el orden 60 sin tapa, 100 sin tapa, 100 con tapa y 60 con tapa. Los PNG se conservan sin alteraciones y se encuadran con CSS.
-- `assets/modelo-*.jpg`: las fichas comerciales originales. Cada tarjeta conserva su enlace a la ficha. La portada utiliza la nueva imagen del modelo de 60 cm con tapa, también confirmada por el usuario.
+- `assets/canasto-real-*.jpg`: las cuatro fotos reales enviadas por el usuario, copiadas sin alteraciones. Cada foto corresponde a su modelo; la de 100 cm con tapa también se usa en portada. El encuadre se ajusta con CSS.
+- `assets/modelo-*.jpg`: las fichas comerciales originales. Cada tarjeta conserva su enlace a la ficha.
 - `assets/canasto-*.svg`: ilustraciones de V2 conservadas, ya no visibles.
 - `assets/logo-negocio.jpg`: logo original confirmado por el usuario, conservado sin alteraciones. Se usa en cabecera, pie y favicon.
 - `tests/contact.test.cjs`: pruebas de interacción sin dependencias ni envíos reales.
@@ -42,7 +42,7 @@ El formulario no tiene backend, no guarda datos y no envía mensajes por sí sol
 - El versionado de `styles.css` y `script.js` evita reutilizar recursos de la versión anterior.
 
 ## Material pendiente
-Pendientes: enlace del Facebook confirmado, fotos reales para sustituir las imágenes generadas (portada: 100 cm con tapa). Los precios, cobertura, venta directa y pedidos a medida ya fueron confirmados por el cliente.
+Pendiente: enlace del Facebook confirmado. Ya se reemplazaron las imágenes generadas del catálogo y la portada por las cuatro fotografías reales proporcionadas por el usuario. Los precios, cobertura, venta directa y pedidos a medida ya fueron confirmados por el cliente.
 
 ## Diseño V4
 Se adapta la estética de las capturas aprobadas: azul oscuro, acentos celestes, botones verdes, logo circular, portada con producto, catálogo de cuatro columnas en escritorio y beneficios con iconos. En celulares las tarjetas se apilan para conservar legibilidad. Las fotos del negocio se conservan; las imágenes de referencia se usan como guía visual y no como evidencia de instalaciones ni cantidades de clientes.

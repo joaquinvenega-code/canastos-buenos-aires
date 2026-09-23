@@ -17,10 +17,12 @@
 .hero-photo{width:75%;margin-left:auto}@media(max-width:600px){.hero-photo{width:100%}}
 @media(min-width:601px){.hero-media::after{background:linear-gradient(90deg,#001020 25%,transparent 58%),linear-gradient(0deg,#001020,transparent 25%)}}
 
-/* Product images supplied on 20 September: frame the basket and its supports. */
-.product-photo{object-fit:cover;object-position:center 35%}
+/* Original customer photographs: keep the basket visible in each catalog card. */
+.product-photo{object-fit:cover;object-position:center 65%}
+.product-photo[src$="canasto-real-60-con.jpg"]{object-position:center 76%}
 
 .hero-photo{object-fit:cover;object-position:center}
+@media(max-width:600px){.hero-media{height:auto;aspect-ratio:1027/1280}}
 
 /* A single recognizable WhatsApp mark, with a clear handset at small sizes. */
 .icon-definitions{position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
