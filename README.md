@@ -35,7 +35,7 @@ Si el teléfono cambia, actualizar `WHATSAPP_NUMBER` en `script.js` y los enlace
 El formulario no tiene backend, no guarda datos y no envía mensajes por sí solo. No se incluye analítica propia. La sección Instagram carga contenido externo de Instagram.
 
 ## Comentarios e Instagram
-- Se conservan los tres comentarios de prueba por indicación del usuario del 22 de septiembre. Están identificados como ejemplos, no testimonios reales. No hay recepción, almacenamiento ni publicación de comentarios de visitantes; no se conectó ni contrató un servicio externo.
+- La sección de comentarios es una vista previa de reseñas estilo Google: tres tarjetas con avatares genéricos, estrellas y puntuación ficticia, identificadas como ejemplos tanto en el encabezado como en cada tarjeta. El botón de escritura está deshabilitado hasta conectar un perfil real. No se importan reseñas, no se recopilan datos y no se carga ningún servicio de reseñas externo. El diseño final dependerá de la integración elegida.
 - Perfil confirmado por el usuario: https://www.instagram.com/canastosdebasurabuenosaires/
 - Integración nativa del perfil mediante el script oficial `https://www.instagram.com/embed.js`. Instagram sirve su contenido; no se copian miniaturas a la web ni se coloca un token en el repositorio.
 - El enlace al perfil permanece disponible si Instagram no carga. La disponibilidad depende de Instagram y de los permisos de contenido externo del navegador.
